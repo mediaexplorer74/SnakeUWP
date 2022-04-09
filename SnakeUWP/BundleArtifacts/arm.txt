@@ -1,0 +1,5 @@
+MainPackage=C:\Users\media\source\repos\SnakeUWP\SnakeUWP\SnakeUWP\bin\ARM\Debug\SnakeUWP.Windows_1.0.0.0_ARM_Debug.appx
+ResourcePack=C:\Users\media\source\repos\SnakeUWP\SnakeUWP\SnakeUWP\bin\ARM\Debug\SnakeUWP.Windows_1.0.0.0_scale-100.appx
+ResourcePack=C:\Users\media\source\repos\SnakeUWP\SnakeUWP\SnakeUWP\bin\ARM\Debug\SnakeUWP.Windows_1.0.0.0_scale-125.appx
+ResourcePack=C:\Users\media\source\repos\SnakeUWP\SnakeUWP\SnakeUWP\bin\ARM\Debug\SnakeUWP.Windows_1.0.0.0_scale-150.appx
+ResourcePack=C:\Users\media\source\repos\SnakeUWP\SnakeUWP\SnakeUWP\bin\ARM\Debug\SnakeUWP.Windows_1.0.0.0_scale-400.appx

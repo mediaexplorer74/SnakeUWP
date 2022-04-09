@@ -1,0 +1,137 @@
+﻿<Page
+    x:Class="SnakeUWP.Pages.HighscorePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SnakeUWP.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Source={StaticResource Locator}, Path=HighscoreViewModel}"
+    >
+
+    
+    <Grid Background="Black" BorderBrush="DodgerBlue" BorderThickness="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid ColumnSpan="3">
+            <TextBlock FontSize="40"
+                           Margin="12,12,12,12"
+                           Text="Highscore"
+                           Foreground="DodgerBlue"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           />
+            <Button
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Command="{Binding OnBack}"
+                >
+                <Image
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Stretch="None"
+                    Source="ms-appx:///Assets/backButton.png" />
+            </Button>
+        </Grid>
+        <!-- Left arrow -->
+        <Button 
+                Grid.Row="1"
+                Grid.RowSpan="2"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                            Command="{Binding GetPrevCommand}"
+            >
+            <Image
+                VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Stretch="None"
+                    Source="ms-appx:///Assets/leftArrow.png"
+                />
+        </Button>
+        <!-- Right arrow -->
+        <Button 
+                Grid.Row="1" Grid.Column="2"
+                Grid.RowSpan="2"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Command="{Binding GetNextCommand}"
+            >
+            <Image
+                VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Stretch="None"
+                    Source="ms-appx:///Assets/rightArrow.png"
+                />
+        </Button>
+        <!-- Highscore type -->
+        <TextBlock Grid.Row="1"
+                   Grid.ColumnSpan="3"
+                   Foreground="DodgerBlue"
+                   HorizontalAlignment="Center"
+                   Text="{Binding CurrentScores}"
+                   />
+        <!-- Highscore titles -->
+        <Grid Row="2" ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="44"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+            <Grid HorizontalAlignment="Left" >
+                <TextBlock  Foreground="DodgerBlue" Text="Place" HorizontalAlignment="Center"/>
+            </Grid>
+            <Grid Column="1" HorizontalAlignment="Left" >
+                <TextBlock  Foreground="DodgerBlue" Text="Name" HorizontalAlignment="Center"/>
+            </Grid>
+            <Grid Column="3" HorizontalAlignment="Right" >
+                <TextBlock  Foreground="DodgerBlue" Text="Score" HorizontalAlignment="Center"/>
+            </Grid>
+        </Grid>
+        <!-- Highscore elements -->
+        <Grid ColumnSpan="3"
+              Row="2"
+              HorizontalAlignment="Stretch" 
+              VerticalAlignment="Stretch"
+              BorderBrush="DodgerBlue"
+              >
+            <ListView IsItemClickEnabled="False" 
+                ItemsSource="{Binding Scores}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="12,12,12,12">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid  HorizontalAlignment="Left">
+                                <TextBlock  Foreground="DodgerBlue" Text="{Binding Place}" HorizontalAlignment="Center"/>
+                            </Grid>
+                            <Grid Column="1" HorizontalAlignment="Left">
+                                <TextBlock  Foreground="DodgerBlue" Text="{Binding Name}" HorizontalAlignment="Center"/>
+                            </Grid>
+                            <Grid Column="3" HorizontalAlignment="Right" >
+                                <TextBlock  Foreground="DodgerBlue" Text="{Binding Score}" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </Grid>
+
+    </Grid>
+</Page>
